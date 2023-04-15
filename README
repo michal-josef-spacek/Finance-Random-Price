@@ -1,0 +1,96 @@
+NAME
+    Finance::Price::Random - Perl class for creating random image.
+
+SYNOPSIS
+     use Finance::Price::Random;
+
+     my $obj = Finance::Price::Random->new(%parameters);
+     my $price = $obj->random;
+
+METHODS
+  "new"
+     my $obj = Finance::Price::Random->new(%parameters);
+
+    Constructor.
+
+    *       "currencies"
+
+            Reference to array with possible currencies.
+
+            Default value is ['CZK'].
+
+    *       "min"
+
+            Minimal value for random price.
+
+            Default value is 0.
+
+    *       "max"
+
+            Maximal value for random price.
+
+            Default value is 100.
+
+    Returns instance of object.
+
+  "random"
+     my $price = $obj->random;
+
+    Get random price.
+
+    Returns Data::Currency object.
+
+ERRORS
+     new():
+             Parameter 'min' is required.
+             Parameter 'min' must be a number.
+             Parameter 'max' is required.
+             Parameter 'max' must be a number.
+             Parameter 'max' must be greater than parameter 'min'.
+             From Class::Utils:
+                     Unknown parameter '%s'.
+
+EXAMPLE
+     use strict;
+     use warnings;
+
+     use Finance::Price::Random;
+
+     # Object.
+     my $obj = Finance::Price::Random->new(
+             'currencies' => ['USD', 'EUR'],
+             'min' => 99,
+             'max' => 101,
+     );
+
+     # Print random price.
+     print $obj->random."\n";
+
+     # Output like:
+     # EUR100,00
+ 
+     # Output like:
+     # $99.00
+ 
+     # Output like:
+     # $101.00
+
+DEPENDENCIES
+    Class::Utils, Data::Currency, Error::Pure.
+
+REPOSITORY
+    <https://github.com/michal-josef-spacek/Finance-Price-Random>.
+
+AUTHOR
+    Michal Josef Špaček <mailto:skim@cpan.org>
+
+    <http://skim.cz>
+
+LICENSE AND COPYRIGHT
+    © 2023 Michal Josef Špaček
+
+    BSD 2-Clause License
+
+VERSION
+    0.01
+
