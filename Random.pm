@@ -32,13 +32,13 @@ sub new {
 	if (! defined $self->{'min'}) {
 		err "Parameter 'min' is required.";
 	}
-	if ($self->{'min'} !~ m/^\d+$/ms) {
+	if ($self->{'min'} !~ m/^\-?\d+\.?\d*$/ms) {
 		err "Parameter 'min' must be a number.";
 	}
 	if (! defined $self->{'max'}) {
 		err "Parameter 'max' is required.";
 	}
-	if ($self->{'max'} !~ m/^\d+$/ms) {
+	if ($self->{'max'} !~ m/^\-?\d+\.?\d*$/ms) {
 		err "Parameter 'max' must be a number.";
 	}
 	if ($self->{'max'} < $self->{'min'}) {
