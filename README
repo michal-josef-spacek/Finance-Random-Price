@@ -42,6 +42,9 @@ METHODS
 
 ERRORS
      new():
+             Parameter 'decimal_num' must be a number.
+             Parameter 'decimal_num' must be greater than 0.
+             Parameter 'decimal_num' must be lesser than 3.
              Parameter 'min' is required.
              Parameter 'min' must be a number.
              Parameter 'max' is required.

@@ -4,7 +4,7 @@ use warnings;
 use English qw(-no_match_vars);
 use Error::Pure::Utils qw(clean);
 use Finance::Price::Random;
-use Test::More 'tests' => 9;
+use Test::More 'tests' => 12;
 use Test::NoWarnings;
 
 # Test.
@@ -73,4 +73,34 @@ eval {
 };
 is($EVAL_ERROR, "Parameter 'max' must be greater than parameter 'min'.\n",
 	"Parameter 'max' must be greater than parameter 'min'.");
+clean();
+
+# Test.
+eval {
+	Finance::Price::Random->new(
+		'decimal_num' => 'bar',
+	);
+};
+is($EVAL_ERROR, "Parameter 'decimal_num' must be a number.\n",
+	"Parameter 'decimal_num' must be a number.");
+clean();
+
+# Test.
+eval {
+	Finance::Price::Random->new(
+		'decimal_num' => -1,
+	);
+};
+is($EVAL_ERROR, "Parameter 'decimal_num' must be greater than 0.\n",
+	"Parameter 'decimal_num' must be greater than 0.");
+clean();
+
+# Test.
+eval {
+	Finance::Price::Random->new(
+		'decimal_num' => 3,
+	);
+};
+is($EVAL_ERROR, "Parameter 'decimal_num' must be lesser than 3.\n",
+	"Parameter 'decimal_num' must be lesser than 3.");
 clean();

@@ -19,6 +19,9 @@ sub new {
 	# Price currencies.
 	$self->{'currencies'} = ['CZK'];
 
+	# Decimal numbers.
+	$self->{'decimal_num'} = undef;
+
 	# Min/max value..
 	$self->{'min'} = 0;
 	$self->{'max'} = 10000;
@@ -41,6 +44,17 @@ sub new {
 	if ($self->{'max'} < $self->{'min'}) {
 		err "Parameter 'max' must be greater than parameter 'min'.";
 	}
+	if (defined $self->{'decimal_num'}) {
+		if ($self->{'decimal_num'} !~ m/^\-?\d+$/ms) {
+			err "Parameter 'decimal_num' must be a number.";
+		}
+		if ($self->{'decimal_num'} < 0) {
+			err "Parameter 'decimal_num' must be greater than 0.";
+		}
+		if ($self->{'decimal_num'} > 2) {
+			err "Parameter 'decimal_num' must be lesser than 3.";
+		}
+	}
 
 	# Object.
 	return $self;
@@ -49,8 +63,11 @@ sub new {
 sub random {
 	my $self = shift;
 
+	my $dec_mul = $self->{'decimal_num'} ? $self->{'decimal_num'} * 10 : 1;
+
 	my $rand_currency = int(rand(scalar @{$self->{'currencies'}}));
-	my $rand_value = int(rand($self->{'max'} - $self->{'min'} + 1)) + $self->{'min'};
+	my $rand_value = int(rand(($self->{'max'} - $self->{'min'} + 1) * $dec_mul))
+		/ $dec_mul + $self->{'min'};
 
 	my $price = Data::Currency->new($rand_value, $self->{'currencies'}->[$rand_currency]);
 
@@ -119,6 +136,9 @@ Returns Data::Currency object.
 =head1 ERRORS
 
  new():
+         Parameter 'decimal_num' must be a number.
+         Parameter 'decimal_num' must be greater than 0.
+         Parameter 'decimal_num' must be lesser than 3.
          Parameter 'min' is required.
          Parameter 'min' must be a number.
          Parameter 'max' is required.
