@@ -19,6 +19,13 @@ METHODS
 
             Default value is ['CZK'].
 
+    *       "decimal_num"
+
+            Number of decimal characters in number. Possible values are
+            undef, 1 or 2.
+
+            Default value is undef.
+
     *       "min"
 
             Minimal value for random price.

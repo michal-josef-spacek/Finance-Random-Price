@@ -109,6 +109,12 @@ Reference to array with possible currencies.
 
 Default value is ['CZK'].
 
+=item * C<decimal_num>
+
+Number of decimal characters in number. Possible values are undef, 1 or 2.
+
+Default value is undef.
+
 =item * C<min>
 
 Minimal value for random price.
