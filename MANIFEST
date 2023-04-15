@@ -18,5 +18,7 @@ Random.pm
 README
 t/Finance-Price-Random/01-use.t
 t/Finance-Price-Random/02-version.t
+t/Finance-Price-Random/03-new.t
+t/Finance-Price-Random/04-random.t
 xt/Finance-Price-Random/01-pod_coverage.t
 xt/Finance-Price-Random/02-pod.t
