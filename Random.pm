@@ -129,6 +129,8 @@ Returns Data::Currency object.
 
 =head1 EXAMPLE
 
+=for comment filename=random_usd_or_eur.pl
+
  use strict;
  use warnings;
 
