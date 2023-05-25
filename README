@@ -1,15 +1,15 @@
 NAME
-    Finance::Price::Random - Perl class for creating random image.
+    Finance::Random::Price - Perl class for creating random image.
 
 SYNOPSIS
-     use Finance::Price::Random;
+     use Finance::Random::Price;
 
-     my $obj = Finance::Price::Random->new(%parameters);
+     my $obj = Finance::Random::Price->new(%parameters);
      my $price = $obj->random;
 
 METHODS
   "new"
-     my $obj = Finance::Price::Random->new(%parameters);
+     my $obj = Finance::Random::Price->new(%parameters);
 
     Constructor.
 
@@ -64,10 +64,10 @@ EXAMPLE
      use strict;
      use warnings;
 
-     use Finance::Price::Random;
+     use Finance::Random::Price;
 
      # Object.
-     my $obj = Finance::Price::Random->new(
+     my $obj = Finance::Random::Price->new(
              'currencies' => ['USD', 'EUR'],
              'min' => 99,
              'max' => 101,
@@ -89,7 +89,7 @@ DEPENDENCIES
     Class::Utils, Data::Currency, Error::Pure.
 
 REPOSITORY
-    <https://github.com/michal-josef-spacek/Finance-Price-Random>.
+    <https://github.com/michal-josef-spacek/Finance-Random-Price>.
 
 AUTHOR
     Michal Josef Špaček <mailto:skim@cpan.org>

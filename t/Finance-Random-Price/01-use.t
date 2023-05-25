@@ -7,8 +7,8 @@ use Test::NoWarnings;
 BEGIN {
 
 	# Test.
-	use_ok('Finance::Price::Random');
+	use_ok('Finance::Random::Price');
 }
 
 # Test.
-require_ok('Finance::Price::Random');
+require_ok('Finance::Random::Price');

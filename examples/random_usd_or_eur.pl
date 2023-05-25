@@ -3,10 +3,10 @@
 use strict;
 use warnings;
 
-use Finance::Price::Random;
+use Finance::Random::Price;
 
 # Object.
-my $obj = Finance::Price::Random->new(
+my $obj = Finance::Random::Price->new(
         'currencies' => ['USD', 'EUR'],
         'min' => 99,
         'max' => 101,

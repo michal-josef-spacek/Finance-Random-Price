@@ -1,4 +1,4 @@
-package Finance::Price::Random;
+package Finance::Random::Price;
 
 use strict;
 use warnings;
@@ -84,20 +84,20 @@ __END__
 
 =head1 NAME
 
-Finance::Price::Random - Perl class for creating random image.
+Finance::Random::Price - Perl class for creating random image.
 
 =head1 SYNOPSIS
 
- use Finance::Price::Random;
+ use Finance::Random::Price;
 
- my $obj = Finance::Price::Random->new(%parameters);
+ my $obj = Finance::Random::Price->new(%parameters);
  my $price = $obj->random;
 
 =head1 METHODS
 
 =head2 C<new>
 
- my $obj = Finance::Price::Random->new(%parameters);
+ my $obj = Finance::Random::Price->new(%parameters);
 
 Constructor.
 
@@ -160,10 +160,10 @@ Returns Data::Currency object.
  use strict;
  use warnings;
 
- use Finance::Price::Random;
+ use Finance::Random::Price;
 
  # Object.
- my $obj = Finance::Price::Random->new(
+ my $obj = Finance::Random::Price->new(
          'currencies' => ['USD', 'EUR'],
          'min' => 99,
          'max' => 101,
@@ -189,7 +189,7 @@ L<Error::Pure>.
 
 =head1 REPOSITORY
 
-L<https://github.com/michal-josef-spacek/Finance-Price-Random>.
+L<https://github.com/michal-josef-spacek/Finance-Random-Price>.
 
 =head1 AUTHOR
 

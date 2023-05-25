@@ -3,20 +3,20 @@ use warnings;
 
 use English qw(-no_match_vars);
 use Error::Pure::Utils qw(clean);
-use Finance::Price::Random;
+use Finance::Random::Price;
 use Test::More 'tests' => 12;
 use Test::NoWarnings;
 
 # Test.
 eval {
-	Finance::Price::Random->new('');
+	Finance::Random::Price->new('');
 };
 is($EVAL_ERROR, "Unknown parameter ''.\n", 'Bad \'\' parameter.');
 clean();
 
 # Test.
 eval {
-	Finance::Price::Random->new(
+	Finance::Random::Price->new(
 		'something' => 'value',
 	);
 };
@@ -25,12 +25,12 @@ is($EVAL_ERROR, "Unknown parameter 'something'.\n",
 clean();
 
 # Test.
-my $obj = Finance::Price::Random->new;
-isa_ok($obj, 'Finance::Price::Random');
+my $obj = Finance::Random::Price->new;
+isa_ok($obj, 'Finance::Random::Price');
 
 # Test.
 eval {
-	Finance::Price::Random->new(
+	Finance::Random::Price->new(
 		'min' => undef,
 	);
 };
@@ -39,7 +39,7 @@ clean();
 
 # Test.
 eval {
-	Finance::Price::Random->new(
+	Finance::Random::Price->new(
 		'min' => 'bad',
 	);
 };
@@ -48,7 +48,7 @@ clean();
 
 # Test.
 eval {
-	Finance::Price::Random->new(
+	Finance::Random::Price->new(
 		'max' => undef,
 	);
 };
@@ -57,7 +57,7 @@ clean();
 
 # Test.
 eval {
-	Finance::Price::Random->new(
+	Finance::Random::Price->new(
 		'max' => 'bad',
 	);
 };
@@ -66,7 +66,7 @@ clean();
 
 # Test.
 eval {
-	Finance::Price::Random->new(
+	Finance::Random::Price->new(
 		'min' => 100,
 		'max' => 99,
 	);
@@ -77,7 +77,7 @@ clean();
 
 # Test.
 eval {
-	Finance::Price::Random->new(
+	Finance::Random::Price->new(
 		'decimal_num' => 'bar',
 	);
 };
@@ -87,7 +87,7 @@ clean();
 
 # Test.
 eval {
-	Finance::Price::Random->new(
+	Finance::Random::Price->new(
 		'decimal_num' => -1,
 	);
 };
@@ -97,7 +97,7 @@ clean();
 
 # Test.
 eval {
-	Finance::Price::Random->new(
+	Finance::Random::Price->new(
 		'decimal_num' => 3,
 	);
 };
