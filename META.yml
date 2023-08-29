@@ -24,6 +24,7 @@ no_index:
     - xt
 requires:
   Class::Utils: 0.03
+  Data::Currency: 0
   Error::Pure: 0.11
   perl: 5.6.0
 resources:

@@ -17,6 +17,7 @@ license 'bsd';
 name 'Finance-Random-Price';
 readme_from 'Price.pm';
 requires 'Class::Utils' => 0.03;
+requires 'Data::Currency' => 0;
 requires 'Error::Pure' => 0.11;
 requires 'perl' => '5.6.0';
 resources 'bugtracker' => 'https://github.com/michal-josef-spacek/Finance-Random-Price/issues';
