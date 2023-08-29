@@ -16,6 +16,7 @@ MANIFEST			This list of files
 META.yml
 Price.pm
 README
+SIGNATURE
 t/Finance-Random-Price/01-use.t
 t/Finance-Random-Price/02-version.t
 t/Finance-Random-Price/03-new.t
